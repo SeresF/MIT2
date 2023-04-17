@@ -33,7 +33,6 @@ public class TrainControllerImpl implements TrainController {
 	public void setSpeedLimit(int speedLimit) {
 		this.speedLimit = speedLimit;
 		enforceSpeedLimit();
-		
 	}
 
 	private void enforceSpeedLimit() {
@@ -44,10 +43,10 @@ public class TrainControllerImpl implements TrainController {
 
 	@Override
 	public void setJoystickPosition(int joystickPosition) {
-		this.step = joystickPosition;		
+		this.step = joystickPosition;
 	}
 
 	public void enableEmergBrake() {
-		if (brake_on == true) {speedLimit =0;}
+		if (brake_on == true) {speedLimit = 0;}
 	}
 }
