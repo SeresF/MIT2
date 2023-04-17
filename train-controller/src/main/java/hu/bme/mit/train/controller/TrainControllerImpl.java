@@ -29,11 +29,6 @@ public class TrainControllerImpl implements TrainController {
 		return referenceSpeed;
 	}
 
-
-	public void setReferenceSpeed(int rfspd) {
-		this.referenceSpeed = rfspd;
-	}
-
 	@Override
 	public void setSpeedLimit(int speedLimit) {
 		this.speedLimit = speedLimit;
@@ -49,10 +44,7 @@ public class TrainControllerImpl implements TrainController {
 	@Override
 	public void setJoystickPosition(int joystickPosition) {
 		this.step = joystickPosition;
-		if(getReferenceSpeed() + step >= this.speedLimit)  { enforceSpeedLimit(); }
-		else {
-			this.setReferenceSpeed(getReferenceSpeed() + step );
-		}
+		this.followSpeed();
 	}
 
 	public void enableEmergBrake() {
